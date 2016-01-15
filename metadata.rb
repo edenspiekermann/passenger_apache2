@@ -12,6 +12,8 @@ recipe 'passenger_apache2::mod_rails', 'Enables Apache module configuration for 
 depends 'apache2', '>= 2.0'
 depends 'build-essential'
 
+suggests "chef-rvm"
+
 %w( fedora redhat centos scientific amazon oracle ubuntu debian arch suse ).each do |os|
   supports os
 end
