@@ -26,4 +26,5 @@ rvm_shell 'passenger_module' do
   creates node['passenger']['module_path']
   only_if { node['passenger']['install_module'] }
   ruby_string node['passenger']['rvm_ruby_string']
+  not_if { ::File.exist?(node['passenger']['module_path']) }
 end
